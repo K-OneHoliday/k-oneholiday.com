@@ -116,6 +116,7 @@
 						<!-- Two -->
 							<section id="about">
 								<div class="inner">
+									<p style="font-size: small; font-style: italic">此網站現在尚處於設計階段，因此可能欠缺一些重要功能，請多多見諒！</p>
 									<header class="major">
 										<h2>關於我們</h2>
 									</header>

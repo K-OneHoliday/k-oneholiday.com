@@ -4,9 +4,16 @@
  * (c) 2018 健一假期。版權所有。
  */
 
+// 保存 window.onload 默認行動
+var _windowOnload = window.onload;
+
 window.onload = function () {
   // 啟動嚴格模式
   "use strict";
+
+  // 執行 window.onload 默認的行動（如有）
+  if (typeof _windowOnload === "function")
+    _windowOnload();
 
   // 使用 AJAX 加載谷歌地圖
   // 這能防止谷歌地圖減慢網站加載的速度

@@ -31,12 +31,14 @@ else {
     echo "</ul></span>";
   } else {
     $mail = new PHPMailer;
+    $mail->CharSet = "UTF-8";
+    $mail->Encoding = "base64";
     $mail->setFrom($_POST["email"], $_POST["name"]);
     $mail->addReplyTo($_POST["email"], $_POST["name"]);
     $mail->addAddress("kent@koneholiday.com");
     // $mail->addBCC("i.donaldl@me.com"); // For debugging purposes only
-    $mail->Subject = "[健一假期網頁]來自{$_POST["name"]}的信息";
-    $mail->Body = $_POST["message"];
+    $mail->Subject = mb_convert_encoding("[健一假期網頁]來自{$_POST["name"]}的信息", mb_detect_encoding("[健一假期網頁]來自{$_POST["name"]}的信息"));
+    $mail->Body = mb_convert_encoding($_POST["message"], mb_detect_encoding($_POST["message"]));
     echo $mail->send() ?
       "<span style=\"color: green\"><span class=\"icon fa fa-check-circle\"></span> 傳送信息成功。</span>" :
       "<span style=\"color: red\"><span class=\"icon fa fa-exclamation-circle\"></span> 傳送信息失敗 - 網站嘗試傳送信息時遇到了不知名的錯誤，請直接電郵給 <a href=\"mailto:kent@koneholiday.com\">kent@koneholiday.com</a> 並向本公司回報此錯誤。</span>";

@@ -9,6 +9,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 
 require "../libs/PHPMailer-6.0.5/src/PHPMailer.php";
+require "locale.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST" || !isset($_POST["name"]) || !isset($_POST["email"]) || !isset($_POST["message"]))
   echo "<span style=\"color: red\"><span class=\"icon fa fa-exclamation-circle\"></span> 傳送信息失敗 - 請提交正確的表格</span>";

@@ -121,37 +121,36 @@
 										<h2>關於我們</h2>
 									</header>
 									<p>我們是一所另類的旅行社，能夠為您度身設計適合您的行程。無論您想去哪裡度假和有多少人同行，我們都可以讓您成團 <span title="必須有二人或以上">*</span>。</p>
-									<div class="row">
-										<div class="6u 12u$(small)">
-											<p><img style="width: 100%" src="images/external/月光園遊月山莊 (2).jpg" alt="月光園遊月山莊 (2)" title="月光園遊月山莊" /></p>
-										</div>
-										<div class="6u 12u$(small)">
-											<p><img style="width: 100%" src="images/external/月光園遊月山莊 (3).jpg" alt="月光園遊月山莊 (3)" title="月光園遊月山莊" /></p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="4u 6u(medium) 12u$(small)">
-											<p><img style="width: 100%" src="images/external/8坂神社 (3).jpg" alt="8坂神社 (3)" title="8坂神社" /></p>
-										</div>
-										<div class="4u 6u(medium) 12u$(small)">
-											<p><img style="width: 100%" src="images/external/有馬溫泉 (3).jpg" alt="有馬溫泉 (3)" title="有馬溫泉" /></p>
-										</div>
-										<div class="4u 12u$(medium)">
-											<p><img style="width: 100%" src="images/external/月光園遊月山莊 (4).jpg" alt="月光園遊月山莊 (4)" title="月光園遊月山莊" /></p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="4u 6u(medium) 12u$(small)">
-											<p><img style="width: 100%" src="images/external/神戶HARBOUR LAND.jpg" alt="神戶HARBOUR LAND" title="神戶HARBOUR LAND" /></p>
-										</div>
-										<div class="4u 6u(medium) 12u$(small)">
-											<p><img style="width: 100%" src="images/external/渡月橋 (2).jpg" alt="渡月橋 (2)" title="渡月橋" /></p>
-										</div>
-										<div class="4u 12u$(medium)">
-											<p><img style="width: 100%" src="images/external/WORLD DREAM.jpg" alt="WORLD DREAM" title="WORLD DREAM" /></p>
-										</div>
-									</div>
-									<p style="font-size: small"><em>以上圖片僅供參考</em></p>
+									<?php
+									require "assets/php/credentials.php";
+									try {
+										$k_one = new PDO("mysql:host=localhost;dbname=k_one", $db_username, $db_password);
+										echo "<div class=\"row\" style=\"text-align: center\">";
+										$i = 0;
+										foreach ($k_one->query("SELECT * FROM images") as $row) {
+											if ($i % 3 === 0 && $i !== 0)
+												echo "</div><div class=\"row\" style=\"text-align: center\">";
+											echo "<div class=\"4u 12u$(small)\">";
+											echo "<p>";
+											if (is_null($row["pdf"]))
+												echo "<img src=\"images/uploads/" . htmlspecialchars($row["img"]) . "\" alt=\"" . htmlspecialchars($row["img"]) . "\" style=\"width: 100%\" />";
+											else
+												echo "<a href=\"pdf/uploads/" . htmlspecialchars($row["pdf"]) . "\" target=\"_blank\"><img src=\"images/uploads/" . htmlspecialchars($row["img"]) . "\" alt=\"" . htmlspecialchars($row["img"]) . "\" style=\"width: 100%\" /></a>";
+											echo "</p>";
+											if (!is_null($row["description"]))
+												echo "<p style=\"font-size: small; font-style: italic\">" . htmlspecialchars($row["description"]) . "</p>";
+											echo "</div>";
+											$i++;
+										}
+										echo "</div>";
+										$k_one = NULL;
+									} catch (PDOException $e) {
+										echo "<span style=\"color: red\"><p><span class=\"icon fa fa-exclamation-circle\"></span> 嘗試連接資料庫時發生了以下錯誤，因此無法顯示有關圖片：</p><p><pre><code>" .
+											htmlspecialchars($e->getMessage()) .
+											"</code></pre></p></span>";
+									}
+									?>
+									<p style="font-size: small; font-style: italic">以上圖片只供參考</p>
 								</div>
 							</section>
 

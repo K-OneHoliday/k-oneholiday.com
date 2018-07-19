@@ -130,12 +130,10 @@
 										foreach ($k_one->query("SELECT * FROM images") as $row) {
 											if ($i % 3 === 0 && $i !== 0)
 												echo "</div><div class=\"row\" style=\"text-align: center\">";
-											echo "<div class=\"4u 12u$(small)\">";
-											echo "<p>";
-											if (is_null($row["pdf"]))
-												echo "<img src=\"images/uploads/" . htmlspecialchars($row["img"]) . "\" alt=\"" . htmlspecialchars($row["img"]) . "\" style=\"width: 100%\" />";
-											else
-												echo "<a href=\"pdf/uploads/" . htmlspecialchars($row["pdf"]) . "\" target=\"_blank\"><img src=\"images/uploads/" . htmlspecialchars($row["img"]) . "\" alt=\"" . htmlspecialchars($row["img"]) . "\" style=\"width: 100%\" /></a>";
+											echo "<div class=\"4u 12u$(small)\"><p>";
+											echo is_null($row["pdf"]) ?
+												"<img src=\"images/uploads/" . htmlspecialchars(rawurlencode($row["img"])) . "\" alt=\"" . htmlspecialchars($row["img"]) . "\" style=\"width: 100%\" />" :
+												"<a href=\"pdf/uploads/" . htmlspecialchars(rawurlencode($row["pdf"])) . "\" target=\"_blank\"><img src=\"images/uploads/" . htmlspecialchars(rawurlencode($row["img"])) . "\" alt=\"" . htmlspecialchars($row["img"]) . "\" style=\"width: 100%\" /></a>";
 											echo "</p>";
 											if (!is_null($row["description"]))
 												echo "<p style=\"font-size: small; font-style: italic\">" . htmlspecialchars($row["description"]) . "</p>";

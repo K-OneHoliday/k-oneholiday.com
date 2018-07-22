@@ -35,7 +35,13 @@
 			<div id="wrapper">
 
 				<!-- Header -->
-					<?php require "assets/php/header.php"; ?>
+					<header id="header" class="alt">
+						<a href="index.php" class="logo"><strong>健一假期</strong> <span>K-One Holiday</span></a>
+						<nav>
+							<a href="#menu">目錄</a>
+						</nav>
+					</header>
+
 
 				<!-- Menu -->
 					<?php require "assets/php/menu.php"; ?>
@@ -142,13 +148,14 @@
 										}
 										echo "</div>";
 										$k_one = NULL;
+										if ($i)
+											echo "<p style=\"font-size: small; font-style: italic\">以上圖片只供參考</p>";
 									} catch (PDOException $e) {
 										echo "<span style=\"color: red\"><p><span class=\"icon fa fa-exclamation-circle\"></span> 嘗試連接資料庫時發生了以下錯誤，因此無法顯示有關圖片：</p><p><pre><code>" .
 											htmlspecialchars($e->getMessage()) .
 											"</code></pre></p></span>";
 									}
 									?>
-									<p style="font-size: small; font-style: italic">以上圖片只供參考</p>
 								</div>
 							</section>
 

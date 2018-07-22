@@ -10,7 +10,7 @@ require "../assets/php/admin_verify_session.php";
 -->
 <html>
 	<head>
-		<title>主頁 - 管理員 - 健一假期</title>
+		<title>「關於我們」圖片及行程表 - 管理員 - 健一假期</title>
 		<meta charset="gb2312" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
@@ -33,11 +33,30 @@ require "../assets/php/admin_verify_session.php";
 						<!-- One -->
 							<section id="one">
 								<div class="inner">
-									<header class="major">
-										<h1>歡迎，管理員！</h1>
-									</header>
+									<h2>「關於我們」圖片及行程表</h2>
 									<p style="font-size: small; color: yellow"><span class="icon fa fa-exclamation-triangle"></span> 為了保障您帳戶的安全，請謹記對網站做完改動後儘快登出。</p>
-									<p>您可透過此介面更改此網站的某些內容，請按以下右上角的目錄標誌以觀看所有選項。</p>
+									<p>您可透過此頁面新增或刪除顯示在主頁「關於我們」部分的圖片，圖片可附有文字和/或 PDF 檔案。</p>
+									<hr />
+									<p id="status">
+										<!-- 新增/刪除圖片狀態 -->
+									</p>
+									<div class="table-wrapper">
+										<form action="#" method="post">
+											<table>
+												<thead>
+													<tr>
+														<th>圖片</th>
+														<th>PDF 檔案</th>
+														<th>說明</th>
+														<th>行動</th>
+													</tr>
+												</thead>
+												<tbody id="current-items">
+													<!-- 「關於我們」現有圖片資料 -->
+												</tbody>
+											</table>
+										</form>
+									</div>
 								</div>
 							</section>
 
@@ -56,6 +75,7 @@ require "../assets/php/admin_verify_session.php";
 			<script src="../assets/js/breakpoints.min.js"></script>
 			<script src="../assets/js/util.js"></script>
 			<script src="../assets/js/main.js"></script>
+			<script src="../assets/js/admin_about_images.js"></script>
 
 	</body>
 </html>

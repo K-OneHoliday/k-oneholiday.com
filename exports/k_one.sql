@@ -2,22 +2,40 @@
 -- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jul 18, 2018 at 04:10 PM
--- Server version: 5.6.38
--- PHP Version: 7.2.1
+-- 主機: localhost
+-- 產生時間： 2018 年 07 月 22 日 11:27
+-- 伺服器版本: 5.6.38
+-- PHP 版本： 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `k_one`
+-- 資料庫： `k_one`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `images`
+-- 資料表結構 `admins`
+--
+
+CREATE TABLE `admins` (
+  `username` text NOT NULL,
+  `password_hash` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 資料表的匯出資料 `admins`
+--
+
+INSERT INTO `admins` (`username`, `password_hash`) VALUES
+('admin', '$2y$10$hHhPtDqRQjfpTSg/GyR2ReiY0CZJYbUBnmvlAbqEqOzb1nLNkE.Vm');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `images`
 --
 
 CREATE TABLE `images` (
@@ -28,35 +46,21 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `images`
---
-
-INSERT INTO `images` (`id`, `img`, `pdf`, `description`) VALUES
-(1, '8坂神社 (3).jpg', NULL, NULL),
-(2, '月光園遊月山莊 (2).jpg', NULL, NULL),
-(3, '月光園遊月山莊 (3).jpg', '\"pdf sample\".pdf', NULL),
-(4, '月光園遊月山莊 (4).jpg', NULL, '月光園遊月山莊'),
-(5, '有馬溫泉 (3).jpg', '<@!&>&@.pdf', '一個人一生一定要去有馬溫泉起碼一次。'),
-(6, '神戶HARBOUR LAND.jpg', NULL, NULL),
-(7, '渡月橋 (2).jpg', 'PDF 檔案.pdf', 'This is the best place on Earth!'),
-(8, 'WORLD DREAM.jpg', NULL, '&#@*^$&*#!*&@#^$!(\"\'\"&&&\"\'');
-
---
--- Indexes for dumped tables
+-- 已匯出資料表的索引
 --
 
 --
--- Indexes for table `images`
+-- 資料表索引 `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- 在匯出的資料表使用 AUTO_INCREMENT
 --
 
 --
--- AUTO_INCREMENT for table `images`
+-- 使用資料表 AUTO_INCREMENT `images`
 --
 ALTER TABLE `images`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;

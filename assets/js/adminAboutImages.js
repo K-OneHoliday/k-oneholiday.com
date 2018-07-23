@@ -1,5 +1,5 @@
 /*
- * admin_about_images.js
+ * adminAboutImages.js
  * 負責處理 about_images.php 主要 AJAX 環節的腳本
  * (c) 2018 健一假期。版權所有。
  */
@@ -20,7 +20,7 @@ window.onload = function () {
 
 function getCurrentItems() {
   var
-    content = "<tr><td><input type=\"file\" id=\"img\" name=\"img\" /></td><td><input type=\"file\" id=\"pdf\" name=\"pdf\" /></td><td><textarea id=\"description\" name=\"description\" style=\"resize: none\"></textarea></td><td><a class=\"button special\" href=\"#\" onclick=\"event.preventDefault();addImage()\"><span class=\"icon fa fa-plus\"></span> 新增</a></td></tr>",
+    content = "<tr><td><input type=\"file\" id=\"img\" name=\"img\" required /></td><td><input type=\"file\" id=\"pdf\" name=\"pdf\" /></td><td><textarea id=\"description\" name=\"description\" style=\"resize: none\"></textarea></td><td><a class=\"button special\" href=\"#\" onclick=\"event.preventDefault();addImage()\"><span class=\"icon fa fa-plus\"></span> 新增</a></td></tr>",
     xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200) {

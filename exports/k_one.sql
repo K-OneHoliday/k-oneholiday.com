@@ -2,22 +2,22 @@
 -- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- 主機: localhost
--- 產生時間： 2018 年 07 月 22 日 11:27
--- 伺服器版本: 5.6.38
--- PHP 版本： 7.2.1
+-- Host: localhost
+-- Generation Time: Jul 23, 2018 at 11:50 AM
+-- Server version: 5.6.38
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- 資料庫： `k_one`
+-- Database: `k_one`
 --
 
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
@@ -26,7 +26,7 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- 資料表的匯出資料 `admins`
+-- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`username`, `password_hash`) VALUES
@@ -35,7 +35,7 @@ INSERT INTO `admins` (`username`, `password_hash`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `images`
+-- Table structure for table `images`
 --
 
 CREATE TABLE `images` (
@@ -46,21 +46,21 @@ CREATE TABLE `images` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- 已匯出資料表的索引
+-- Indexes for dumped tables
 --
 
 --
--- 資料表索引 `images`
+-- Indexes for table `images`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`);
 
 --
--- 在匯出的資料表使用 AUTO_INCREMENT
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- 使用資料表 AUTO_INCREMENT `images`
+-- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;

@@ -139,7 +139,7 @@
 											echo "<div class=\"4u 12u$(small)\"><p>";
 											echo is_null($row["pdf"]) ?
 												"<img src=\"images/uploads/" . htmlspecialchars(rawurlencode($row["img"])) . "\" alt=\"" . htmlspecialchars($row["img"]) . "\" style=\"width: 100%\" />" :
-												"<a href=\"pdf/uploads/" . htmlspecialchars(rawurlencode($row["pdf"])) . "\" target=\"_blank\"><img src=\"images/uploads/" . htmlspecialchars(rawurlencode($row["img"])) . "\" alt=\"" . htmlspecialchars($row["img"]) . "\" style=\"width: 100%\" /></a>";
+												"<a href=\"pdf/uploads/" . htmlspecialchars(rawurlencode($row["pdf"])) . "\" target=\"_blank\" style=\"border-bottom-style: none\"><img src=\"images/uploads/" . htmlspecialchars(rawurlencode($row["img"])) . "\" alt=\"" . htmlspecialchars($row["img"]) . "\" style=\"width: 100%\" /></a>";
 											echo "</p>";
 											if (!is_null($row["description"]))
 												echo "<p style=\"font-size: small; font-style: italic\">" . htmlspecialchars($row["description"]) . "</p>";

@@ -41,7 +41,7 @@ require "../assets/php/admin_verify_session.php";
 										<!-- 新增/刪除圖片狀態 -->
 									</p>
 									<div class="table-wrapper">
-										<form action="#" method="post">
+										<form name="add-image" id="add-image" enctype="multipart/form-data" action="#" method="post">
 											<table>
 												<thead>
 													<tr>

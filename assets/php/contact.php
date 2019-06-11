@@ -76,25 +76,6 @@
           <p id="hk-map">
             <!-- 香港總店谷歌地圖 -->
           </p>
-          <h5>海南島分店</h5>
-          <p>中国海南省海口市<br />义龙西路21号侨汇大厦1207室</p>
-          <p id="hainan-map">
-            <!-- 海南島分店谷歌地圖 -->
-          </p>
-        </div>
-      </section>
-      <section>
-        <div class="contact-method">
-          <span class="icon alt fa-qq"></span>
-          <h3>QQ號碼</h3>
-          <span>1619767021</span>
-        </div>
-      </section>
-      <section>
-        <div class="contact-method">
-          <span class="icon alt fa-weixin"></span>
-          <h3>微信ID</h3>
-          <span>TAT94904895</span>
         </div>
       </section>
     </section>

@@ -17,19 +17,13 @@ window.onload = function () {
 
   // 使用 AJAX 加載谷歌地圖
   // 這能防止谷歌地圖減慢網站加載的速度
-  var hkMapReq = new XMLHttpRequest(), hainanMapReq = new XMLHttpRequest();
+  var hkMapReq = new XMLHttpRequest();
   hkMapReq.onreadystatechange = function () {
     if (this.readyState === 4 && this.status === 200)
       document.getElementById("hk-map").innerHTML = this.responseText;
   };
-  hainanMapReq.onreadystatechange = function () {
-    if (this.readyState === 4 && this.status === 200)
-      document.getElementById("hainan-map").innerHTML = this.responseText;
-  };
   hkMapReq.open("GET", "assets/php/hk_map.php", true);
   hkMapReq.send();
-  hainanMapReq.open("GET", "assets/php/hainan_map.php", true);
-  hainanMapReq.send();
 
   // 啟用聯絡表格
   document.getElementById("name").disabled

@@ -122,9 +122,8 @@
 						<!-- Two -->
 							<section id="about">
 								<div class="inner">
-									<p style="font-size: small; font-style: italic">此網站現在尚處於設計階段，因此可能欠缺一些重要功能，請多多見諒！</p>
 									<header class="major">
-										<h2>我們日本連接社</h2>
+										<h2>關於我們</h2>
 									</header>
 									<p>我們是一所專業日本地接社，獨立包團，設計行程，歡迎各大旅行社查詢。</p>
 									<?php
